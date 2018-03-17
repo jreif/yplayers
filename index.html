@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="yplayers.css">
+    <title>Yankee Volleyball Player Search Tool</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Yankee Volleyball Player Search Tool</span>
+      </nav>
+      <div class="row" style="margin-top:10px;">
+        <div class="col-3">
+          <div class="form-group">
+            <label>Last name</label>
+            <input id="last" class="form-control">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="form-group">
+            <label>First name</label>
+            <input id="first" class="form-control">
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="form-group">
+            <label>Gender</label>
+            <select id="gender" class="form-control">
+              <option value="">Any</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="form-group">
+            <label>Rating</label>
+            <select id="ratings" class="form-control">
+              <option value="">Any</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="form-group">
+            <label>Current member?</label>
+            <select id="current" class="form-control">
+              <option value="">Any</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="table-responsive">
+            <table id="players" class="table table-sm">
+              <thead>
+                <tr>
+                  <th>Last name</th>
+                  <th>First name</th>
+                  <th>Gender</th>
+                  <th>Rating</th>
+                  <th>Current member?</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.js"></script>
+    <script src="yplayers.js" type="text/javascript"></script>
+  </body>
+</html>
