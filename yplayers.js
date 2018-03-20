@@ -19,10 +19,12 @@ $(document).ready(function() {
     var players = currents.concat(lapsed);
     var dt = $("table#players").DataTable({
       "data": players,
+      "responsive": true,
+      "autoWidth": false,
       "searching": true,
       "paging": true,
       "pageLength": 20,
-      "drawCallback": genderColors,
+      "drawCallback": addColors,
       "lengthMenu": [[10, 20, 50, 100], [10, 20, 50, 100]]
     });
     var ratingVals = [...new Set(players.map(function(x) {return x[3];}))].sort();
@@ -35,13 +37,23 @@ $(document).ready(function() {
   });
 });
 
-function genderColors() {
+function addColors() {
   $("tr").each(function() {
-    $(this).find("td:eq(3)").html("<span class='badge badge-pill badge-primary'>" + $(this).find("td:eq(3)").text() + "</span>");
-    if ($(this).find("td:eq(2)").text() == "Female") {$(this).find("td:eq(2)").html("<span class='badge badge-pill badge-female'>&female;</span>")}
-    else if ($(this).find("td:eq(2)").text() == "Male") {$(this).find("td:eq(2)").html("<span class='badge badge-pill badge-male'>&male;</span>")}
-    if ($(this).find("td:eq(4)").text() == "Yes") {$(this).find("td:eq(4)").html("<span class='badge badge-pill badge-success'>Yes</span>")}
-    else if ($(this).find("td:eq(4)").text() == "No") {$(this).find("td:eq(4)").html("<span class='badge badge-pill badge-secondary'>No</span>")}
+    $(this).find("td:eq(3)").html("<span class='badge badge-secondary'>" + $(this).find("td:eq(3)").text() + "</span>");
+    if ($(this).find("td:eq(2)").text() == "Female") {
+      $(this).find("td:eq(2)").html("<i class='fas fa-venus'></i>");
+      $(this).addClass("female");
+    }
+    else if ($(this).find("td:eq(2)").text() == "Male") {
+      $(this).find("td:eq(2)").html("<i class='fas fa-mars'></i>");
+      $(this).addClass("male");
+    }
+    if ($(this).find("td:eq(4)").text() == "Yes") {
+      $(this).find("td:eq(4)").html("<span class='badge badge-pill badge-success'>Yes</span>")
+    }
+    else if ($(this).find("td:eq(4)").text() == "No") {
+      $(this).find("td:eq(4)").html("<span class='badge badge-pill badge-secondary'>No</span>")
+    }
   });
 }
 

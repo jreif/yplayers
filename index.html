@@ -5,28 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
     <link rel="stylesheet" href="yplayers.css">
     <title>Yankee Volleyball Player Search Tool</title>
   </head>
   <body>
     <div class="container-fluid">
       <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1">Yankee Volleyball Player Search Tool</span>
+        <span class="navbar-brand mb-0 h1">
+          <img src="http://yankee.org/images/logo.png" height=40 alt="Yankee Volleyball" title="Yankee Volleyball">
+          Yankee Volleyball Player Search Tool
+        </span>
       </nav>
       <div class="row" style="margin-top:10px;">
-        <div class="col-3">
+        <div class="col-6 col-md-3">
           <div class="form-group">
             <label>Last name</label>
             <input id="last" class="form-control">
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-6 col-md-3">
           <div class="form-group">
             <label>First name</label>
             <input id="first" class="form-control">
           </div>
         </div>
-        <div class="col-2">
+        <div class="col-4 col-md-2">
           <div class="form-group">
             <label>Gender</label>
             <select id="gender" class="form-control">
@@ -36,7 +40,7 @@
             </select>
           </div>
         </div>
-        <div class="col-2">
+        <div class="col-4 col-md-2">
           <div class="form-group">
             <label>Rating</label>
             <select id="ratings" class="form-control">
@@ -44,9 +48,9 @@
             </select>
           </div>
         </div>
-        <div class="col-2">
+        <div class="col-4 col-md-2">
           <div class="form-group">
-            <label>Current member?</label>
+            <label>Current?</label>
             <select id="current" class="form-control">
               <option value="">Any</option>
               <option value="Yes">Yes</option>
@@ -61,11 +65,11 @@
             <table id="players" class="table table-sm">
               <thead>
                 <tr>
-                  <th>Last name</th>
-                  <th>First name</th>
+                  <th>Last</th>
+                  <th>First</th>
                   <th>Gender</th>
                   <th>Rating</th>
-                  <th>Current member?</th>
+                  <th>Current?</th>
                 </tr>
               </thead>
             </table>
