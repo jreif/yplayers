@@ -4,3 +4,5 @@ table.dataTable tbody tr.male {background-color: azure;}
 table.dataTable tbody td i.fa-venus {color: hotpink;}
 table.dataTable tbody td i.fa-mars {color: deepskyblue;}
 table.dataTable tbody td {padding: 5px 10px;}
+.btn-group {display: flex;}
+.btn-group .btn {flex: 1;}

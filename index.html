@@ -10,52 +10,60 @@
     <title>Yankee Volleyball Player Search Tool</title>
   </head>
   <body>
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1">
+        <img src="http://yankee.org/images/logo.png" height=40 alt="Yankee Volleyball" title="Yankee Volleyball">
+        Player Search
+      </span>
+      <button class="btn btn-outline-secondary" id="clear">Clear filters</button>
+    </nav>
     <div class="container-fluid">
-      <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1">
-          <img src="http://yankee.org/images/logo.png" height=40 alt="Yankee Volleyball" title="Yankee Volleyball">
-          Yankee Volleyball Player Search Tool
-        </span>
-      </nav>
-      <div class="row" style="margin-top:10px;">
-        <div class="col-6 col-md-3">
+      <div class="form-row" style="margin-top:10px;">
+        <div class="col-12 col-sm-6 col-xl-3">
           <div class="form-group">
-            <label>Last name</label>
-            <input id="last" class="form-control">
+            <input id="last" class="form-control" placeholder="Last name">
           </div>
         </div>
-        <div class="col-6 col-md-3">
+        <div class="col-12 col-sm-6 col-xl-3">
           <div class="form-group">
-            <label>First name</label>
-            <input id="first" class="form-control">
+            <input id="first" class="form-control" placeholder="First name">
           </div>
         </div>
-        <div class="col-4 col-md-2">
+        <div class="col-12 col-md-4 col-xl-2">
           <div class="form-group">
-            <label>Gender</label>
-            <select id="gender" class="form-control">
-              <option value="">Any</option>
-              <option value="Female">Female</option>
-              <option value="Male">Male</option>
-            </select>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="gender" value="" autocomplete="off" checked> Any
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="gender" value="Female" autocomplete="off"> Female
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="gender" value="Male" autocomplete="off"> Male
+              </label>
+            </div>
           </div>
         </div>
-        <div class="col-4 col-md-2">
+        <div class="col-12 col-md-4 col-xl-2">
           <div class="form-group">
-            <label>Rating</label>
             <select id="ratings" class="form-control">
-              <option value="">Any</option>
+              <option value="">Any rating</option>
             </select>
           </div>
         </div>
-        <div class="col-4 col-md-2">
+        <div class="col-12 col-md-4 col-xl-2">
           <div class="form-group">
-            <label>Current?</label>
-            <select id="current" class="form-control">
-              <option value="">Any</option>
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </select>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="current" value="" autocomplete="off" checked> Any
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="current" value="Yes" autocomplete="off"> Member
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="current" value="No" autocomplete="off"> Lapsed
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -67,9 +75,9 @@
                 <tr>
                   <th>Last</th>
                   <th>First</th>
-                  <th>Gender</th>
-                  <th>Rating</th>
-                  <th>Current?</th>
+                  <th><div class="d-none d-md-block">Gender</div></th>
+                  <th><div class="d-none d-md-block">Rating</div></th>
+                  <th><div class="d-none d-md-block">Member?</div></th>
                 </tr>
               </thead>
             </table>

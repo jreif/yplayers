@@ -31,28 +31,34 @@ $(document).ready(function() {
     ratingVals.forEach(function(x) {$("select#ratings").append($("<option></option>").attr("value",x).text(x));});
     $("input#last").on("input", function() {dt.column(0).search(this.value).draw();});
     $("input#first").on("input", function() {dt.column(1).search(this.value).draw();});
-    $("select#gender").on("change", function() {dt.column(2).search(searchVal(this.value), true, false).draw();});
+    $("input[name='gender']").on("change", function() {dt.column(2).search(searchVal(this.value), true, false).draw();});
     $("select#ratings").on("change", function() {dt.column(3).search(searchVal(this.value), true, false).draw();});
-    $("select#current").on("change", function() {dt.column(4).search(searchVal(this.value), true, false).draw();});
+    $("input[name='current']").on("change", function() {dt.column(4).search(searchVal(this.value), true, false).draw();});
+  });
+
+  $("button#clear").on("click", function() {
+    $("input#last").val("");
+    $("input#first").val("");
+    $("input[name='gender']")[0].click();
+    $("select#ratings").val("");
+    $("input[name='current']")[0].click();
   });
 });
 
 function addColors() {
   $("tr").each(function() {
-    $(this).find("td:eq(3)").html("<span class='badge badge-secondary'>" + $(this).find("td:eq(3)").text() + "</span>");
     if ($(this).find("td:eq(2)").text() == "Female") {
-      $(this).find("td:eq(2)").html("<i class='fas fa-venus'></i>");
-      $(this).addClass("female");
+      $(this).addClass("female").find("td:eq(2)").html("<i class='fas fa-venus'></i>");
     }
     else if ($(this).find("td:eq(2)").text() == "Male") {
-      $(this).find("td:eq(2)").html("<i class='fas fa-mars'></i>");
-      $(this).addClass("male");
+      $(this).addClass("male").find("td:eq(2)").html("<i class='fas fa-mars'></i>");
     }
+    $(this).find("td:eq(3)").html("<span class='badge badge-pill badge-secondary'>" + $(this).find("td:eq(3)").text() + "</span>");
     if ($(this).find("td:eq(4)").text() == "Yes") {
-      $(this).find("td:eq(4)").html("<span class='badge badge-pill badge-success'>Yes</span>")
+      $(this).find("td:eq(4)").html("<i class='fas fa-check text-success'>")
     }
     else if ($(this).find("td:eq(4)").text() == "No") {
-      $(this).find("td:eq(4)").html("<span class='badge badge-pill badge-secondary'>No</span>")
+      $(this).find("td:eq(4)").html("<i class='fas fa-times text-secondary'>")
     }
   });
 }
