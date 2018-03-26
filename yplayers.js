@@ -43,6 +43,10 @@ $(document).ready(function() {
     $("select#ratings").val("");
     $("input[name='current']")[0].click();
   });
+
+  $("button.clear").on("click", function() {
+    $(this).closest(".input-group").find("input").val("").trigger("input");
+  });
 });
 
 function addColors() {

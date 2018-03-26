@@ -15,18 +15,24 @@
         <img src="http://yankee.org/images/logo.png" height=40 alt="Yankee Volleyball" title="Yankee Volleyball">
         Player Search
       </span>
-      <button class="btn btn-outline-secondary" id="clear">Clear filters</button>
+      <button class="btn btn-outline-secondary" id="clear">Clear all filters</button>
     </nav>
     <div class="container-fluid">
       <div class="form-row" style="margin-top:10px;">
         <div class="col-12 col-sm-6 col-xl-3">
-          <div class="form-group">
+          <div class="form-group input-group">
             <input id="last" class="form-control" placeholder="Last name">
+            <div class="input-group-append">
+              <button class="btn btn-secondary clear" type="button" title="Clear"><i class='fas fa-eraser'></i></button>
+            </div>
           </div>
         </div>
         <div class="col-12 col-sm-6 col-xl-3">
-          <div class="form-group">
+          <div class="form-group input-group">
             <input id="first" class="form-control" placeholder="First name">
+            <div class="input-group-append">
+              <button class="btn btn-secondary clear" type="button" title="Clear"><i class='fas fa-eraser'></i></button>
+            </div>
           </div>
         </div>
         <div class="col-12 col-md-4 col-xl-2">
