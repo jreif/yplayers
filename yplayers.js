@@ -42,6 +42,7 @@ $(document).ready(function() {
     $("input[name='gender']")[0].click();
     $("select#ratings").val("");
     $("input[name='current']")[0].click();
+    $("#players_filter").find("input").val("").trigger("input");
   });
 
   $("button.clear").on("click", function() {
