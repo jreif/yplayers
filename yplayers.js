@@ -42,7 +42,8 @@ $(document).ready(function() {
     $("input[name='gender']")[0].click();
     $("select#ratings").val("");
     $("input[name='current']")[0].click();
-    $("#players_filter").find("input").val("").trigger("input");
+    $("#players_filter").find("input").val("");
+    $("table#players").DataTable().search("").columns().search("").draw();
   });
 
   $("button.clear").on("click", function() {
